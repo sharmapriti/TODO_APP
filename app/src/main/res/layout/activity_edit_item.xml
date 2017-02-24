@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/main_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:weightSum="1">
+        <TextView
+            android:id="@+id/textView4"
+            android:paddingTop="15dp"
+            android:layout_weight="0.05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:text="What is to be Done?"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+        <EditText
+            android:id="@+id/editTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="20"
+            android:textSize="18sp"
+            android:inputType="textPersonName" />
+        <TextView
+            android:id="@+id/dueDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.05"
+            android:ems="20"
+            android:paddingTop="15dp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:text="Due Date"
+            android:textStyle="bold"
+            android:textSize="14sp"/>
+        <EditText
+            android:id="@+id/showDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="20"
+            android:hint=""
+            android:textSize="18sp"
+            android:onClick="datePicker" />
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:onClick="onDoneBtn"
+        app:layout_anchorGravity="bottom|right|end"
+        app:srcCompat="@drawable/ic_done_black_24dp" />
+
+</android.support.design.widget.CoordinatorLayout>

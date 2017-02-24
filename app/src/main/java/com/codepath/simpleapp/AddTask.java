@@ -66,7 +66,7 @@ public class AddTask extends AppCompatActivity implements DatePickerDialog.OnDat
 
             return new DatePickerDialog(getActivity(),
                     (DatePickerDialog.OnDateSetListener)
-                             getActivity(),year,month,day);
+                            getActivity(),year,month,day);
 
         }
     }
@@ -75,16 +75,15 @@ public class AddTask extends AppCompatActivity implements DatePickerDialog.OnDat
 
         EditText editText = (EditText)findViewById(editTask);
         EditText editDate = (EditText)findViewById(R.id.showDate);
+        if (!editText.getText().toString().equals("")){
+            Intent intent = new Intent();
+            Bundle bundle = new Bundle();
+            bundle.putString("Task",editText.getText().toString());
+            bundle.putString("DueDate",editDate.getText().toString());
+            intent.putExtras(bundle);
+            setResult(RESULT_OK,intent);
+            finish();
 
-
-        Intent intent = new Intent();
-        Bundle bundle = new Bundle();
-        bundle.putString("Task",editText.getText().toString());
-        bundle.putString("DueDate",editDate.getText().toString());
-        intent.putExtras(bundle);
-        setResult(RESULT_OK,intent);
-        finish();
-
-
+        }
     }
 }
